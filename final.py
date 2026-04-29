@@ -1,3 +1,4 @@
+code = '''\
 "use client";
 import { useEffect, useState } from "react";
 import Script from "next/script";
@@ -307,3 +308,7 @@ export default function Home() {
     </>
   );
 }
+'''
+with open('app/page.jsx', 'w') as f:
+    f.write(code)
+print('OK - page.jsx reecrit proprement')
