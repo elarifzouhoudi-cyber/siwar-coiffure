@@ -30,12 +30,12 @@ const SERVICES = [
 ];
 
 const REVIEWS = [
-  { text: 'Une coloriste exceptionnelle. Une femme chaleureuse et de très bons conseils. Depuis 6 ans je ne vais plus ailleurs.', name: 'Fatima M.', src: 'Google' },
-  { text: 'Je suis ressortie toute émue. C'est la première fois qu une coiffeuse me fait des mèches d une telle qualité. Je le conseille à tout le monde.', name: 'Sophie L.', src: 'Google' },
-  { text: 'Elle ma fait un lissage brésilien de qualité et une coupe à très bon prix. Une véritable magicienne des cheveux.', name: 'Nadia B.', src: 'Pages Jaunes' },
-  { text: 'C est une femme qui a des mains en or. Mes cheveux sont très difficiles et elle réussit toujours à les rendre beaux et faciles à coiffer.', name: 'Isabelle P.', src: 'Google' },
-  { text: 'Siwar sort du lot. Elle prend le temps de donner des conseils même après être sortie du salon. Le prix est correct, le résultat toujours au rendez-vous.', name: 'Karima D.', src: 'Pages Jaunes' },
-  { text: 'J'ai enfin trouvé une coiffeuse talentueuse et à l'écoute. Je recommande vivement ce salon à toutes les femmes d'Aix-en-Provence.', name: 'Marie C.', src: 'Google' },
+  { text:"Une coloriste exceptionnelle, chaleureuse et de tres bons conseils. Depuis 6 ans je ne vais plus ailleurs.", name:"Fatima M.", src:"Google" },
+  { text:"Je suis ressortie toute emue. Jamais eu des meches d une telle qualite. Je le conseille a tout le monde.", name:"Sophie L.", src:"Google" },
+  { text:"Un lissage bresilien de qualite et une coupe a tres bon prix. Une veritable magicienne des cheveux.", name:"Nadia B.", src:"Pages Jaunes" },
+  { text:"Une femme aux mains en or. Mes cheveux sont tres difficiles et elle reussit toujours a les rendre beaux.", name:"Isabelle P.", src:"Google" },
+  { text:"Siwar sort du lot. Le prix est correct, le resultat toujours au rendez-vous.", name:"Karima D.", src:"Pages Jaunes" },
+  { text:"J ai enfin trouve une coiffeuse talentueuse et a l ecoute. Je recommande vivement ce salon.", name:"Marie C.", src:"Google" },
 ];
 
 const HOURS = [
