@@ -4,7 +4,7 @@ import Script from "next/script";
 
 const WIX = "https://static.wixstatic.com/media/";
 const IMG = {
-  devanture: "https://lh5.googleusercontent.com/p/AF1QipOqnHkxAL4ZeGdg2NreQXK96N7OW0piS2Owrxb4=w1600-h1000-k-no",
+  devanture: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE49CXHH0jCyGqV7K4A8PUYlnlfi3ttJ7RnWCQEPbHKvH_HMOWDuFkoPjA_pjO811Wg-ebOv6V-nlB3Oi3pBSET6o1j58-bvmQBvI60w7yHoSkQTIoXoRkaK1RJlcEduDbWgr0=w1600-h1000-k-no",
   interieur: WIX + "c0319c_5f5354e747924972bf6f69f198c901e9~mv2_d_4000_3000_s_4_2.jpg",
   about: WIX + "c0319c_870bac3afc0d476e8f2e3c4ece253582~mv2_d_2800_2772_s_4_2.jpg",
   coupes: [
