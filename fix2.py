@@ -1,4 +1,4 @@
-import './globals.css';
+content = """import './globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://siwarcoiffure.fr'),
@@ -32,3 +32,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+"""
+with open('app/layout.jsx', 'w') as f:
+    f.write(content)
+print('OK')
