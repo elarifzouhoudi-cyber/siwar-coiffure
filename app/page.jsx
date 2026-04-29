@@ -24,8 +24,8 @@ const SERVICES = [
   { n: '01', name: 'Coupe & Brushing',      desc: 'Coupe de transformation, sur cheveux fins ou très frisés. Chaque coupe est pensée en accord avec votre morphologie et votre style de vie.', sub: 'Visagiste ↗' },
   { n: '02', name: 'Couleur & Coloration',  desc: 'Colorations personnalisées, retouches de racines, techniques avancées adaptées à votre teinte naturelle. Résultat éclatant garanti.', sub: 'Coloriste ↗' },
   { n: '03', name: 'Mèches & Balayage',     desc: 'Spécialiste des mèches et balayages, pour un résultat naturel et lumineux qui sublime votre chevelure en toutes saisons.', sub: 'Spécialiste ↗' },
-  { n: '04', name: 'Lissage Premium',       desc: 'Lissages brésilien, japonais, coréen et à la kératine. Techniques d'excellence pour une chevelure lisse, brillante et disciplinée.', sub: 'Brésilien · Japonais · Coréen ↗' },
-  { n: '05', name: 'Chignons & Mariages',   desc: 'À deux pas de l'Hôtel de Ville, idéal pour les futures mariées. Chignons élégants et coiffures événementielles sur mesure.', sub: 'Sur rendez-vous ↗' },
+  { n: '04', name: 'Lissage Premium',       desc: 'Lissages brésilien, japonais, coréen et à la kératine. Techniques d excellence pour une chevelure lisse, brillante et disciplinée.', sub: 'Brésilien · Japonais · Coréen ↗' },
+  { n: '05', name: 'Chignons & Mariages',   desc: 'À deux pas de l Hotel de Ville, ideal pour les futures mariées. Chignons élégants et coiffures événementielles sur mesure.', sub: 'Sur rendez-vous ↗' },
   { n: '06', name: 'Soins & Botox Capillaire', desc: 'Traitement botox réparateur, soins en profondeur pour redonner vie, brillance et force à votre chevelure. Résultats visibles dès la première séance.', sub: 'Soin réparateur ↗' },
 ];
 
@@ -367,7 +367,7 @@ export default function Home() {
           <div>
             <span className="sec-label">À Propos du Salon</span>
             <h2 id="aboutHeading" className="about-title" style={{ marginBottom: '2.2rem' }}>
-              <span className="title-line ab-tl">L'excellence</span>
+              <span className="title-line ab-tl">L excellence</span>
               <span className="title-line ab-tl">au service</span>
               <span className="title-line ab-tl">de votre beauté</span>
             </h2>
