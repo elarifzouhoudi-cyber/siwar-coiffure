@@ -87,7 +87,11 @@ export default function Home() {
       lenis.on("scroll", ST.update);
     }
     const nav = document.getElementById("nw");
-    window.addEventListener("scroll", () => nav && nav.classList.toggle("scrolled", window.scrollY>50), {passive:true});
+    const sp = document.getElementById("sp");
+    window.addEventListener("scroll", () => {
+      if (nav) nav.classList.toggle("scrolled", window.scrollY>50);
+      if (sp) sp.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + "%";
+    }, {passive:true});
     const dot = document.getElementById("cd");
     const ring = document.getElementById("cr");
     if (dot && ring && matchMedia("(pointer:fine)").matches) {
@@ -115,6 +119,19 @@ export default function Home() {
     G.from(".gi",{opacity:0,y:32,duration:.7,stagger:.09,scrollTrigger:{trigger:"#gg",start:"top 82%"}});
     G.from(".rc",{opacity:0,y:24,duration:.65,stagger:.08,scrollTrigger:{trigger:"#rg",start:"top 82%"}});
     G.from(".ci",{opacity:0,y:16,duration:.6,stagger:.07,scrollTrigger:{trigger:"#ct",start:"top 65%"}});
+    document.querySelectorAll(".gal-item").forEach(item=>{
+      item.addEventListener("mousemove",e=>{
+        const r=item.getBoundingClientRect();
+        const x=(e.clientX-r.left-r.width/2)/(r.width/2);
+        const y=(e.clientY-r.top-r.height/2)/(r.height/2);
+        G.to(item,{rotateX:-y*5,rotateY:x*5,duration:.4,ease:"power2.out",transformPerspective:800});
+      });
+      item.addEventListener("mouseleave",()=>G.to(item,{rotateX:0,rotateY:0,duration:.8,ease:"elastic.out(1,.4)"}));
+    });
+    document.querySelectorAll(".gcat").forEach(el=>{
+      G.from(el,{opacity:0,x:-24,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 90%"}});
+    });
+    G.from("#ft",{opacity:0,y:16,duration:.8,ease:"power2.out",scrollTrigger:{trigger:"#ft",start:"top 98%"}});
     document.querySelectorAll(".mag").forEach(btn=>{
       btn.addEventListener("mousemove",e=>{
         const r=btn.getBoundingClientRect();
@@ -145,6 +162,7 @@ export default function Home() {
           document.head.appendChild(a);
         }}
       />
+      <div id="sp" className="scroll-progress"/>
       <div id="cd" className="cursor-dot"/>
       <div id="cr" className="cursor-ring"/>
       <div className={"mobile-menu"+(menuOpen?" open":"")}>
@@ -251,7 +269,7 @@ export default function Home() {
             </h2>
           </div>
           <div style={{marginBottom:"4rem"}}>
-            <div style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Coupes</div>
+            <div className="gcat" style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Coupes</div>
             <div id="gg" style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,240px),1fr))",gap:12}}>
               {IMG.coupes.map((src,i)=>(
                 <div key={i} className="gal-item gi" style={{overflow:"hidden",borderRadius:2}}>
@@ -261,7 +279,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{marginBottom:"4rem"}}>
-            <div style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Couleurs et Balayages</div>
+            <div className="gcat" style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Couleurs et Balayages</div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,200px),1fr))",gap:12}}>
               {IMG.couleurs.map((src,i)=>(
                 <div key={i} className="gal-item gi" style={{overflow:"hidden",borderRadius:2}}>
@@ -271,7 +289,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{marginBottom:"4rem"}}>
-            <div style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Meches</div>
+            <div className="gcat" style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Meches</div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,240px),1fr))",gap:12}}>
               {IMG.meches.map((src,i)=>(
                 <div key={i} className="gal-item gi" style={{overflow:"hidden",borderRadius:2}}>
@@ -281,7 +299,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{marginBottom:"4rem"}}>
-            <div style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Chignons et Mariages</div>
+            <div className="gcat" style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Chignons et Mariages</div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,240px),1fr))",gap:12}}>
               {IMG.chignons.map((src,i)=>(
                 <div key={i} className="gal-item gi" style={{overflow:"hidden",borderRadius:2}}>
@@ -291,7 +309,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Lissages</div>
+            <div className="gcat" style={{fontSize:11,letterSpacing:".3em",textTransform:"uppercase",color:"var(--accent)",marginBottom:"1.5rem"}}>Lissages</div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,300px),1fr))",gap:12}}>
               {IMG.lissages.map((src,i)=>(
                 <div key={i} className="gal-item gi" style={{overflow:"hidden",borderRadius:2}}>
@@ -369,7 +387,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer style={{borderTop:"1px solid var(--line)",padding:"clamp(1.5rem,2.5vw,2.2rem) clamp(1.5rem,4vw,3.5rem)",display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:"1rem"}}>
+      <footer id="ft" style={{borderTop:"1px solid var(--line)",padding:"clamp(1.5rem,2.5vw,2.2rem) clamp(1.5rem,4vw,3.5rem)",display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:"1rem"}}>
         <div style={{fontFamily:"var(--serif)",fontSize:".95rem",letterSpacing:".15em",color:"var(--text-m)"}}>SIWAR COIFFURE - Aix-en-Provence</div>
         <div style={{fontSize:11,color:"var(--text-m)",letterSpacing:".1em",textAlign:"center"}}>2024 Siwar Coiffure - 8 rue du Puits Neuf, 13100</div>
         <a href="https://www.facebook.com/coiffeuraixenprovence/" target="_blank" rel="noopener noreferrer" style={{fontSize:11,color:"var(--text-m)",letterSpacing:".15em",textTransform:"uppercase",textDecoration:"none"}}>Facebook</a>

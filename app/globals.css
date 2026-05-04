@@ -38,6 +38,18 @@ body {
   body { cursor: auto; }
 }
 
+/* ─── SCROLL PROGRESS ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), var(--accent-l));
+  z-index: 10000;
+  pointer-events: none;
+  transition: width .08s linear;
+}
+
 /* ─── GRAIN ─── */
 body::after {
   content: '';
@@ -319,6 +331,24 @@ body::after {
   margin-top: 0.4rem;
   font-weight: 400;
 }
+
+/* ─── SERVICE CARD BORDER ─── */
+.sc {
+  position: relative;
+  overflow: hidden;
+}
+.sc::before {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 2px; height: 0%;
+  background: var(--accent);
+  transition: height .5s cubic-bezier(.22,1,.36,1);
+}
+.sc:hover::before { height: 100%; }
+
+/* ─── GALLERY TILT ─── */
+.gal-item { transform-style: preserve-3d; }
 
 /* ─── SERVICES ─── */
 .sec-title {
